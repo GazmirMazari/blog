@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codex Drinor - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- HTMX -->
+    <script src="https://unpkg.com/htmx.org"></script>
+</head>
+<body>
+    <header>
+        <h1>Codex Drinor</h1>
+        <nav>
+            <ul>
+                <li><a href="/" hx-get="/home" hx-target="#main-content" hx-swap="outerHTML">Home</a></li>
+                <li><a href="/about" hx-get="/about" hx-target="#main-content" hx-swap="outerHTML">About</a></li>
+                <li><a href="/contact" hx-get="/contact" hx-target="#main-content" hx-swap="outerHTML">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main id="main-content">
+        <section>
+            <h2>Welcome to Codex Drinor</h2>
+            <p>Your gateway to coding insights, tutorials, and more.</p>
+        </section>
+        
+        <section id="blog-posts" hx-get="/posts" hx-trigger="load" hx-target="#blog-posts" hx-swap="outerHTML">
+            <!-- Blog posts will be loaded here dynamically with HTMX -->
+            <p>Loading latest posts...</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Codex Drinor. All rights reserved.</p>
+    </footer>
+</body>
+</html>
